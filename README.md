@@ -49,19 +49,19 @@ Flow of the application:
 Quiz_App/
 │
 ├── Quiz_application/
-|
+
 │   ├── index.html
-|
+
 │   ├── login.html
-|
+
 │   ├── quizz.html
-|
+
 │   ├── result.html
-|
+
 │   ├── Quiz.css
-|
+
 │   ├── Quiz.js
-│
+
 └── README.md
 
 ❤️ Author
