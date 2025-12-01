@@ -1,5 +1,6 @@
 Quiz Application:
 A simple and interactive quiz application built using HTML, CSS, and JavaScript.
+
 The app includes a welcome page, login page, question page, and result page with score calculation.
 
 ✔ Features:
