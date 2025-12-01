@@ -49,17 +49,17 @@ Flow of the application:
 Quiz_App/
 │
 ├── Quiz_application/
-
+|
 │   ├── index.html
-
+|
 │   ├── login.html
-
+|
 │   ├── quizz.html
-
+|
 │   ├── result.html
-
+|
 │   ├── Quiz.css
-
+|
 │   ├── Quiz.js
 │
 └── README.md
@@ -67,4 +67,5 @@ Quiz_App/
 ❤️ Author
 
 Sravani Dandu
+
 GitHub: https://github.com/sravanidandu5
