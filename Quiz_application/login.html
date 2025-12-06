@@ -4,16 +4,8 @@
   <meta charset="UTF-8">
   <title>Login</title>
   <link rel="stylesheet" href="Quiz.css">
-  <style>
-    .page { max-width: 520px; margin: 60px auto; background: #fff; padding: 28px 36px; border-radius: 12px; text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.08); }
-    input { width: 100%; padding: 12px; margin: 10px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 8px; }
-    .btn { padding: 10px 18px; background:#4b7bff; color:white; border:none; border-radius:8px; cursor:pointer; margin-top:8px; }
-    .demo-note { font-size:13px; color:#555; margin-top:12px; }
-  </style>
-</head>
 
-<body>
-  <div class="page">
+ <div class="page">
     <h2>Login</h2>
 
     <input type="text" id="user" placeholder="Username" autocomplete="off">
@@ -22,24 +14,31 @@
     <button class="btn" onclick="login()">Start Quiz</button>
 
     <p class="demo-note">
-      Demo Login → Username: <b>demo</b> | Password: <b>demo1234</b>
+      Demo Login → Username: <b>demo</b> | Password: <b>1234</b>
     </p>
   </div>
 
   <script>
     function login() {
-      const u = document.getElementById("user").value.trim();
-      const p = document.getElementById("pass").value.trim();
+      let u = document.getElementById("user").value;
+      let p = document.getElementById("pass").value;
 
       const correctUser = "demo";
-      const correctPass = "demo1234";
+      const correctPass = "1234";
+
+      // restrict multiple attempts
+      if (sessionStorage.getItem("testDone") === "yes") {
+        alert("You already completed the test. You cannot take it again.");
+        return;
+      }
 
       if (u === correctUser && p === correctPass) {
+        localStorage.setItem("username", u);
         window.location.href = "quizz.html";
       } else {
-        alert("Incorrect username or password");
+        alert("Incorrect Username or Password");
       }
     }
   </script>
-</body>
+</head>
 </html>
