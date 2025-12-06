@@ -45,6 +45,7 @@ window.onload = function () {
     document.getElementById("userShow").innerHTML =
       "User: " + (localStorage.getItem("username") || "");
     loadQuestion();
+    startTimer(); 
   }
 };
 
