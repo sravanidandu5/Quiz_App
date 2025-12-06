@@ -5,73 +5,18 @@
   <title>Quiz</title>
   <link rel="stylesheet" href="Quiz.css">
   <script src="Quiz.js" defer></script>
-
-  <style>
-    #timerBox {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      color: #333;
-    }
-  </style>
 </head>
 
 <body>
-
   <div class="page">
     <h2>Quiz</h2>
-
     <p id="userShow"></p>
-
-    <!-- TIMER DISPLAY -->
-    <p id="timerBox">Time Left: <span id="timer">30</span> sec</p>
 
     <div id="questionBox"></div>
     <div id="optionsBox"></div>
 
     <button class="btn" onclick="nextQuestion()" id="nextBtn">Next</button>
     <button class="btn" onclick="submitQuiz()" id="submitBtn" style="display:none;">Submit</button>
-
   </div>
-
-  <!-- TIMER SCRIPT -->
-  <script>
-    let totalTime = 30;
-
-    function startTimer() {
-        const timerDisplay = document.getElementById("timer");
-
-        let countdown = setInterval(() => {
-            timerDisplay.textContent = totalTime;
-            totalTime--;
-
-            if (totalTime < 0) {
-                clearInterval(countdown);
-                finishQuiz();
-            }
-        }, 1000);
-    }
-
-    function finishQuiz() {
-        // SAME as submitQuiz()
-        submitQuiz();
-    }
-
-    // Start timer when page loads
-    window.onload = function () {
-        // show username (optional)
-        let u = localStorage.getItem("username");
-        document.getElementById("userShow").innerText = "Welcome, " + u;
-
-        // load first question
-        if (typeof loadQuestion === "function") {
-            loadQuestion();
-        }
-
-        // start timer
-        startTimer();
-    }
-  </script>
-
 </body>
 </html>
