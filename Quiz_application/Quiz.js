@@ -1,3 +1,23 @@
+let totalTime = 30;
+let timerInterval = null;
+
+function startTimer() {
+    const disp = document.getElementById("timer");
+
+    timerInterval = setInterval(() => {
+        disp.textContent = totalTime;
+        totalTime--;
+
+        if (totalTime < 0) {
+            clearInterval(timerInterval);
+            finishQuiz();
+        }
+    }, 1000);
+}
+
+function finishQuiz() {
+    submitQuiz();
+}
 let QUESTIONS = [
   {q:"Which language runs in the browser?", options:["Java","JavaScript","Python","C"], ans:1},
   {q:"HTML stands for?", options:["HyperText Markup Language","HighText","HomeText","None"], ans:0},
